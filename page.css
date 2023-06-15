@@ -1,0 +1,454 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #333;
+}
+
+.box{
+    position: relative;
+    width: 380px;
+    height: 490px;
+    background: #2c1244;
+    margin: 25px 0 25px 350px;
+    border-radius: 10px;
+    box-shadow: 4px 2px 25px 4px #23242a;
+    overflow: hidden;
+}
+
+.box::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 490px;
+    background: linear-gradient(0deg,transparent, transparent,#45f3ff,#45f3ff,#45f3ff);
+    z-index: 1;
+    transform-origin:bottom right ;
+    animation: animation 6s linear infinite;
+}
+
+.box::after{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 490px;
+    background: linear-gradient(0deg,transparent, transparent,#45f3ff,#45f3ff,#45f3ff);
+    z-index: 1;
+    transform-origin:bottom right ;
+    animation: animation 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.ligneBordure{
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+.ligneBordure::before{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 480px;
+    background: linear-gradient(0deg,transparent, transparent,#ff2770,#ff2770,#ff2770);
+    z-index: 1;
+    transform-origin:bottom right ;
+    animation: animation 6s linear infinite;
+    animation-delay: -1.5s;
+}
+.ligneBordure::after{
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 480px;
+    background: linear-gradient(0deg,transparent, transparent,#ff2770,#ff2770,#ff2770);
+    z-index: 1;
+    transform-origin:bottom right ;
+    animation: animation 6s linear infinite;
+    animation-delay: -4.5s;
+}
+
+
+@keyframes animation {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+    
+}
+
+#login-form{
+    position:absolute;
+    width:380px;
+    border-radius: 5px;
+    z-index: 2;
+
+}
+.form-box{
+    width: 370px; 
+    height: 480px;
+    position: relative;
+    inset: 4px;
+    background-color: #333;
+    margin:1px 0 0 1px;
+    border-radius:10px;
+    box-shadow:6px 8px 30px 2px #333;
+    padding: 10px;
+    overflow: hidden;
+}
+.btn-box{
+    width: 264px;
+    margin: 24px auto;
+    position: relative;
+    box-shadow: 0 1px 2px 1px #ded;
+    border-radius: 30px;
+}
+.login-btn{
+    padding: 18px 30px;
+    font-size: 14px;
+    font-weight:500;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    outline:none;
+    position:relative;
+}
+#btn{
+    top: 0;
+    left: 0;
+    position:absolute;
+    width: 154px;
+    height: 100%;
+    background:#1c9cc7;
+    border-radius: 30px;
+    box-shadow: 0 2px #0f6785;
+    transition: .7s;
+}
+
+.input-login{
+    top: 125px;
+    position: absolute;
+    width: 280px;
+    transition: .7s;
+}
+input::placeholder{
+    color:#363535;
+    font-size: 14px;
+}
+.input-register{
+    top: 110px;
+    position:absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+
+.box form .inputBox{
+    position: relative;
+    width: 270px;
+    margin-top:2px;
+}
+.box form .inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    /* margin-bottom: 10px; */
+    background: transparent;
+    border:none;
+    outline: none;
+    box-shadow: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+.box form .inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 32px 0px 10px;
+    pointer-events: none;
+    color: #8f8f8f;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.box form .inputBox input:valid ~ span,
+.box form .inputBox input:focus ~ span{
+    color: #fff;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+}
+.box form .inputBox i{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.box form .inputBox input:valid ~ i,
+.box form .inputBox input:focus ~ i{
+    height:40px;
+    border-radius:4px;
+    
+}
+
+
+.submit-btn{
+    width: 50%;
+    padding: 12px 10px;
+    cursor:pointer;
+    display: block;
+    margin:18px auto;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background:#1c9cc7;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+    box-shadow: 0 2px #0f6785;
+}
+.submit-btn:hover{
+    box-shadow:0 1px #0f6785;
+    top:1px;
+}
+.check-box{
+    margin: 30px 10px 34px 0;
+    width: 16px; 
+    height: 17px;
+    border: none;
+    outline: none;
+}
+.check-box:hover{cursor: pointer;}
+label.lb-box{
+    color:#8f8f8f;
+    font-size:16px;
+    bottom:138px;
+    position:absolute;
+}
+.lb-box{
+    color:#363535;
+    font-size:14px;
+    bottom:75px;
+    position:absolute;
+}
+#login{
+    left:50px;
+}
+#login input, #register input{
+    color:#000;
+    font-size: 18px;
+    
+}
+#login p{
+    position:relative;
+    bottom:20px;
+    margin-left:60px;
+    color:#2031c4;
+    font-size:15px;
+}
+#login p:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+#register{
+    left:450px;
+}
+.closeBtn{
+    position:absolute;
+    top:0;
+    right:0;
+    font-size:25px;
+    margin:5px 12px;
+    color:#0f6785;
+}
+.closeBtn:hover{
+    color:#c0071f;
+    cursor: pointer;
+}
+
+/*style du formulaire mot de passe oublié*/
+.boxe2 .pwdOublie{
+    display:none;
+    position: absolute;
+    width:350px;
+    height:40vh;
+    background-color:#313131;
+    padding:1.5rem 2.5rem;
+    border: 1px solid #1c9cc7;
+    border-radius:10px;
+    box-shadow: 4px 4px 25px 6px #23242a;
+    top:38%;
+    left:7%;
+    z-index:800;
+    transition: 0.5s;
+}
+
+.boxe2 .pwdOublie form .inputBox{
+    position: relative;
+    width: 270px;
+    margin-top:2px;
+}
+.boxe2 .pwdOublie form .inputBox input{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border:none;
+    outline: none;
+    box-shadow: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+}
+.boxe2 .pwdOublie form p{
+    color:#45f3ff;
+    margin: 2px 0 10px 16px;
+    font-size: 18px;
+}
+.boxe2 .pwdOublie form span{
+    margin-top: -7px;
+    width: 80px;
+    height: 3px;
+    border-radius:8px;
+    left:38%;
+    
+}
+.boxe2 .pwdOublie form i{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+    color:#fff;
+    font-size: 22px;
+}
+.boxe2 .pwdOublie form i:hover{
+    color: #c0071f;
+    cursor: pointer;
+}
+
+.boxe2 .pwdOublie form .inputBox h3{
+    position: absolute;
+    left: 0;
+    padding: 0px 0px 5px;
+    pointer-events: none;
+    top: 25px;
+    left: 2px;
+    color: #8f8f8f;
+    font-size: 1em;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+.boxe2 .pwdOublie form .inputBox input:valid ~ h3,
+.boxe2 .pwdOublie form .inputBox input:focus ~ h3{
+    color: #fff;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+}
+.boxe2 .pwdOublie form .inputBox i{
+    /* position: absolute; */
+    left:-5%;
+    bottom:0;
+    width: 100%;
+    height: 2px;
+    margin-top: 48px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+.boxe2 .pwdOublie form .inputBox input:valid ~ i,
+.boxe2 .pwdOublie form .inputBox input:focus ~ i{
+    height:38px;
+    transform: translateY(-34px);
+}
+.boxe2 .pwdOublie form button{
+    margin: 35px auto;
+}
+
+/*style des conteneurs images de la page connexion */
+.boxe1{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 950px;
+    height: 550px;
+    text-align: center;
+    margin: 60px auto;
+    background: #313131;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 4px 2px 25px 4px #23242a;
+}
+.boxe2{
+    position: absolute;
+    width: 380px;
+    height: 490px;
+    background: #333;
+    margin: 29px 0 25px 115px;
+    border: 1px solid #1c9cc7;
+    border-radius: 8px;
+    box-shadow: 4px 2px 25px 4px #23242a;
+}
+.boxe2 p{
+    margin: 15px auto;
+}
+.boxe2 p i{
+    color: #45f3ff;
+    font-size: 110px;
+    font-weight: 500;
+    margin-right: 5%;
+}
+.boxe2 h2{
+    color:#45f3ff;
+    font-weight: 500;
+    margin-right: 5%;
+}
+.boxe2 span{
+    position: absolute;
+    background:#45f3ff;
+    width: 150px;
+    height: 3px;
+    margin: 10px auto;
+    border-radius: 8px;
+    right: 33%;
+    
+}
+
+.boxe2 img{
+    position:absolute;
+    width: 350px;
+    height:auto;
+    bottom: 0;
+    left: 0;
+    border-radius:0px 0px 8px 8px;
+}
+
